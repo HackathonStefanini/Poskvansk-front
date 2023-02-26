@@ -12,15 +12,18 @@ import { ButtonModule } from 'primeng/button';
 import {MenubarModule} from 'primeng/menubar';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
+import { TableModule } from 'primeng/table';
 
 import { HomeComponent } from './modules/home/home.component';
+import { PaginaJogadorComponent } from './pagina-jogador/pagina-jogador.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     StefamonComponent,
-    HomeComponent
+    HomeComponent,
+    PaginaJogadorComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { HomeComponent } from './modules/home/home.component';
     MenubarModule,
     InputTextModule,
     FormsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent],

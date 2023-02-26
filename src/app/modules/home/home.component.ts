@@ -19,10 +19,14 @@ export class HomeComponent implements OnInit {
   }
 
   cadastrarJogador() {
-    alert("Cadastrando jogador " + this.jogador.nickname + " com senha " + this.jogador.password);
     this.jogadorService.cadastrarJogador(this.jogador).subscribe(
-      (response) => {
-        console.log(response);
+
+      () => {
+        alert("Jogador cadastrado com sucesso!");
+      },
+      (error) => {
+        alert("Erro ao cadastrar jogador!");
       });
   }
+
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { MenuItem } from 'primeng/api';
 
@@ -18,7 +19,8 @@ export class AppComponent implements OnInit {
   jogador: Jogador = new Jogador();
 
   constructor(
-    private jogadorService: JogadorService
+    private jogadorService: JogadorService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -31,8 +33,12 @@ export class AppComponent implements OnInit {
   // login(jogador : Jogador) {
   login() {
     this.jogadorService.login(this.jogador).subscribe(
-      (response) => {
-        console.log(response);
+      (jogador : any) => {
+        alert('Login realizado com sucesso!');
+        this.router.navigate(['/pagina-jogador', jogador.id]);
+      },
+      (error) => {
+        alert('Erro ao realizar login! Usuário não encontrado!');
       });
   }
 }

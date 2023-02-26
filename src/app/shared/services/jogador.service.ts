@@ -20,4 +20,22 @@ export class JogadorService {
   cadastrarJogador(jogador : Jogador) {
     return this.http.post(`${this.API_URL}/`, jogador);
   }
+
+  editarJogador(jogador : Jogador) {
+    return this.http.put(`${this.API_URL}/`, jogador);
+  }
+
+  deletarJogador(id : number) {
+    return this.http.delete(`${this.API_URL}/${id}`);
+  }
+
+  pegaPorId(id : number) {
+    return this.http.get(`${this.API_URL}/${id}`);
+  }
+
+  listarTodos() {
+    return this.http.get(`${this.API_URL}/todos`);
+  }
+
+
 }
