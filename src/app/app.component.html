@@ -1,6 +1,6 @@
 <p-menubar [model]="items">
-  <input type="text" pInputText placeholder="Login">
-  <input type="text" pInputText placeholder="Senha">
-  <button pButton label="Entrar"></button>
+  <input type="text" pInputText [(ngModel)]="jogador.nickname" placeholder="Login">
+  <input type="password" pInputText [(ngModel)]="jogador.password" placeholder="Senha">
+  <button pButton label="Entrar" (click)="login()"></button>
 </p-menubar>
 <router-outlet></router-outlet>
